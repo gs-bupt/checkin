@@ -16,12 +16,14 @@ const glados = async () => {
       method: 'GET',
       headers,
     }).then((r) => r.json())
+    console.log('Checkin OK')
     return [
       'Checkin OK',
       `${checkin.message}`,
       `Left Days ${Number(status.data.leftDays)}`,
     ]
   } catch (error) {
+    console.log('Checkin Error')
     return [
       'Checkin Error',
       `${error}`,
